@@ -1,0 +1,15 @@
+@model MvcPracownicy.Models.Dane
+
+@{
+    ViewData["Title"] = "Dodaj nowy rekord";
+}
+
+<h2>Dodaj nowy rekord</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="Tekst">Tekst</label>
+        <input type="text" class="form-control" id="Tekst" name="Tekst" value="@Model.Tekst" />
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>

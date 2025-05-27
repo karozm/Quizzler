@@ -1,0 +1,29 @@
+@model IEnumerable<MvcPracownicy.Models.Dane>
+
+@{
+    ViewData["Title"] = "Sekret";
+}
+
+<h2>Dostęp do sekretnej strony!</h2>
+<p>To mogą zobaczyć tylko zalogowani użytkownicy.</p>
+
+<a href="@Url.Action("Add")">Dodaj nowy rekord</a>
+
+<h3>Lista danych</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tekst</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Tekst</td>
+            </tr>
+        }
+    </tbody>
+</table>
