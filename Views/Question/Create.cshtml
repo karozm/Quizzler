@@ -1,0 +1,87 @@
+@model MvcPracownicy.Models.Question
+
+@{
+    ViewData["Title"] = "Create Question";
+}
+
+<h1>Create New Question</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" id="questionForm">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="QuizId" value="@ViewBag.QuizId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Content" class="control-label">Question</label>
+                <textarea asp-for="Content" class="form-control" rows="3" required></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <h3 class="mt-4">Answer Choices</h3>
+            <div class="card mb-3">
+                <div class="card-body">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <div class="form-group mb-3">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <input type="radio" name="CorrectAnswerIndex" value="@i" class="form-check-input mt-0"
+                                        @(i == 0 ? "checked" : "") required />
+                                </div>
+                                <input type="text" name="Answers" class="form-control answer-input"
+                                    placeholder="Answer @(i + 1)" required />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-controller="Quiz" asp-action="Details" asp-route-id="@ViewBag.QuizId"
+                    class="btn btn-secondary">Back to Quiz</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('questionForm');
+            const answerInputs = document.querySelectorAll('.answer-input');
+
+            form.addEventListener('submit', function (e) {
+                let hasEmptyAnswers = false;
+                answerInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        hasEmptyAnswers = true;
+                    }
+                });
+
+                if (hasEmptyAnswers) {
+                    e.preventDefault();
+                    alert('Please fill in all answer choices.');
+                }
+            });
+
+            // Prevent duplicate answers
+            answerInputs.forEach(input => {
+                input.addEventListener('input', function () {
+                    const currentValue = this.value.trim();
+                    answerInputs.forEach(otherInput => {
+                        if (otherInput !== this && otherInput.value.trim() === currentValue) {
+                            this.setCustomValidity('This answer is already used');
+                        } else {
+                            this.setCustomValidity('');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}

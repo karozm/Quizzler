@@ -1,0 +1,65 @@
+@model MvcPracownicy.Models.Question
+
+@{
+    ViewData["Title"] = "Edit Question";
+}
+
+<h1>Edit Question</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="QuizId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Content" class="control-label">Question</label>
+                <textarea asp-for="Content" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-controller="Quiz" asp-action="Details" asp-route-id="@Model.QuizId"
+                    class="btn btn-secondary">Back to Quiz</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h2 class="mt-4">Answers</h2>
+
+<div class="mb-3">
+    <a asp-controller="Answer" asp-action="Create" asp-route-questionId="@Model.Id" class="btn btn-primary">Add
+        Answer</a>
+</div>
+
+@foreach (var answer in Model.Answers)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title">@answer.Content</h5>
+                    @if (answer.IsCorrect)
+                    {
+                        <span class="badge bg-success">Correct Answer</span>
+                    }
+                </div>
+                <div>
+                    <a asp-controller="Answer" asp-action="Edit" asp-route-id="@answer.Id"
+                        class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-controller="Answer" asp-action="Delete" asp-route-id="@answer.Id"
+                        class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
