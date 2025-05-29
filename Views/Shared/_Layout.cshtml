@@ -7,6 +7,7 @@
     <title>@ViewData["Title"] - MvcPracownicy</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MvcPracownicy.styles.css" asp-append-version="true" />
 </head>
@@ -38,6 +39,17 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Quiz"
                                     asp-action="Index">Quizzes</a>
+                            </li>
+                            @if (Context.Session.GetString("_UserRole") == "admin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="DataManager"
+                                        asp-action="Index">Data Manager</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Solve"
+                                    asp-action="Index">Solve</a>
                             </li>
                             <li class="nav-item">
                                 <form asp-controller="IO" asp-action="Wyloguj" method="post" class="d-inline">

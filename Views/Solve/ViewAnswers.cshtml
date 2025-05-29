@@ -1,0 +1,55 @@
+@model MvcPracownicy.Models.Quiz
+@{
+    ViewData["Title"] = "Quiz Answers";
+    var userAnswers = (Dictionary<string, string[]>)ViewData["UserAnswers"];
+}
+
+<div class="container">
+    <h1 class="mb-4">@Model.Title - Answers</h1>
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <p class="lead mb-4">@Model.Description</p>
+    }
+
+    @foreach (var question in Model.Questions)
+    {
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">@question.Content</h5>
+                <div class="list-group mt-3">
+                    @foreach (var answer in question.Answers)
+                    {
+                        string userAnswerId = userAnswers.ContainsKey($"{question.Id}") ? userAnswers[$"{question.Id}"][0] : "";
+                        bool isUserAnswer = userAnswerId == answer.Id.ToString();
+                        string textClass = "";
+
+                        if (answer.IsCorrect)
+                        {
+                            textClass = "text-success fw-bold";
+                        }
+                        else if (isUserAnswer && !answer.IsCorrect)
+                        {
+                            textClass = "text-danger fw-bold";
+                        }
+
+                        <div class="list-group-item @textClass">
+                            @answer.Content
+                            @if (answer.IsCorrect)
+                            {
+                                <i class="bi bi-check-circle-fill text-success ms-2"></i>
+                            }
+                            @if (isUserAnswer && !answer.IsCorrect)
+                            {
+                                <i class="bi bi-x-circle-fill text-danger ms-2"></i>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="text-center mb-4">
+        <a asp-action="Index" class="btn btn-primary btn-lg">Back to Quiz List</a>
+    </div>
+</div> 

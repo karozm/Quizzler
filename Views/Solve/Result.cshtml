@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Quiz Result";
+}
+
+<div class="container text-center">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h1 class="card-title mb-4">Quiz Result</h1>
+            <h4 class="text-muted mb-4">@ViewData["QuizTitle"]</h4>
+            
+            <div class="display-1 mb-4">
+                @ViewData["Score"]%
+            </div>
+
+            <div class="h3 mb-4 text-primary">
+                @ViewData["Message"]
+            </div>
+
+            <div class="d-flex justify-content-center gap-3">
+                <a asp-action="ViewAnswers" asp-route-id="@TempData["QuizId"]" class="btn btn-info btn-lg">View Answers</a>
+                <a asp-action="Index" class="btn btn-primary btn-lg">Exit to Quiz List</a>
+            </div>
+        </div>
+    </div>
+</div> 

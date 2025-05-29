@@ -8,6 +8,7 @@ namespace MvcPracownicy.Controllers
     public class IOController : Controller
     {
         private const string SessionKeyLoggedIn = "_IsLoggedIn";
+        private const string SessionKeyRole = "_UserRole";
         private readonly AppDbContext _context;
 
         public IOController(AppDbContext context)
@@ -24,16 +25,27 @@ namespace MvcPracownicy.Controllers
         [HttpPost]
         public IActionResult Logowanie(string login, string haslo)
         {
+            // Sprawdź czy to admin
+            if (login == "admin" && haslo == "admin123")
+            {
+                HttpContext.Session.SetString(SessionKeyLoggedIn, "true");
+                HttpContext.Session.SetString(SessionKeyRole, "admin");
+                return RedirectToAction("Zalogowano");
+            }
+
+            // Sprawdź zwykłego użytkownika
             var user = _context.Logins.SingleOrDefault(l => l.LoginName == login);
             if (user != null && user.Haslo == GetMd5Hash(haslo)) 
             {
                 HttpContext.Session.SetString(SessionKeyLoggedIn, "true");
+                HttpContext.Session.SetString(SessionKeyRole, "user");
                 return RedirectToAction("Zalogowano");
             }
 
             ViewBag.Blad = "Nieprawidłowy login lub hasło.";
             return View();
         }
+
         public IActionResult Zalogowano()
         {
             if (HttpContext.Session.GetString(SessionKeyLoggedIn) != "true")
@@ -41,6 +53,7 @@ namespace MvcPracownicy.Controllers
                 return RedirectToAction("Logowanie");
             }
 
+            ViewBag.IsAdmin = HttpContext.Session.GetString(SessionKeyRole) == "admin";
             return View();
         }
 
@@ -48,6 +61,7 @@ namespace MvcPracownicy.Controllers
         public IActionResult Wyloguj()
         {
             HttpContext.Session.Remove(SessionKeyLoggedIn);
+            HttpContext.Session.Remove(SessionKeyRole);
             return RedirectToAction("Logowanie");
         }
 

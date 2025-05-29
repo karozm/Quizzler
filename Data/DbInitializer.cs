@@ -13,8 +13,7 @@ namespace MvcPracownicy.Data
             if (!context.Logins.Any())
             {
                 context.Logins.AddRange(
-                    new Login { LoginName = "admin", Haslo = GetMd5Hash("admin123") },
-                    new Login { LoginName = "user", Haslo = GetMd5Hash("user123") }
+                    new Login { LoginName = "admin", Haslo = GetMd5Hash("admin123") }
                 );
             }
 
