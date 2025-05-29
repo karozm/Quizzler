@@ -1,8 +1,3 @@
-@{
-    ViewData["Title"] = "Zalogowano";
-    Layout = null;
-}
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -23,27 +18,26 @@
                 <span class="logo-text">QUIZZLER</span>
             </a>
             <div class="nav-links">
-                <a href="/Home/Index" class="nav-link">Home</a>
-                <a href="/Quiz/Index" class="nav-link">Quizy</a>
-                <a href="/Solve/Index" class="nav-link">Rozwiąż Quiz</a>
+                <a href="/Home/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">Home</a>
+                <a href="/Quiz/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Quiz" ? "active" : "")">Quizy</a>
+                <a href="/Solve/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Solve" ? "active" : "")">Rozwiąż Quiz</a>
                 @if (Context.Session.GetString("_UserRole") == "admin")
                 {
-                    <a href="/DataManager/Index" class="nav-link">Panel Admina</a>
+                    <a href="/DataManager/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "DataManager" ? "active" : "")">Panel Admina</a>
                 }
             </div>
             <div class="nav-right">
-                <form method="post" asp-action="Wyloguj" class="logout-form">
+                <form method="post" asp-controller="IO" asp-action="Wyloguj" class="logout-form">
                     <button type="submit" class="btn-login">Wyloguj</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="welcome-banner">
-        <div class="banner-content">
-            <h1 class="app-title">QUIZZLER</h1>
-            <p class="banner-text">Twórz niezapomniane quizy i sprawdzaj wiedzę w wyjątkowy sposób</p>
-        </div>
+    <div class="page-content">
+        @RenderBody()
     </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+</html> 

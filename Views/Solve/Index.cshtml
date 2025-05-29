@@ -1,24 +1,35 @@
 @model IEnumerable<MvcPracownicy.Models.Quiz>
-
 @{
-    ViewData["Title"] = "Solve Quizzes";
+    ViewData["Title"] = "Rozwiąż Quiz";
+    Layout = "_AuthenticatedLayout";
 }
 
-<h1>Available Quizzes</h1>
+<div class="quiz-list-container">
+    <div class="quiz-header">
+        <h1>Dostępne Quizy</h1>
+    </div>
 
-<div class="container">
-    @foreach (var quiz in Model)
-    {
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">@quiz.Title</h5>
-                @if (!string.IsNullOrEmpty(quiz.Description))
-                {
-                    <p class="card-text">@quiz.Description</p>
-                }
-                <p class="card-text"><small class="text-muted">Created: @quiz.CreatedAt.ToString("dd/MM/yyyy")</small></p>
-                <a asp-action="Solve" asp-route-id="@quiz.Id" class="btn btn-primary">Solve</a>
+    <div class="quiz-grid">
+        @foreach (var quiz in Model)
+        {
+            <div class="quiz-card solve-card">
+                <div class="quiz-card-content">
+                    <h3>@quiz.Title</h3>
+                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)</p>
+                    <div class="quiz-meta">
+                        <span class="quiz-questions">
+                            <span class="material-icons">quiz</span>
+                            @quiz.Questions.Count pytań
+                        </span>
+                    </div>
+                </div>
+                <div class="quiz-actions solve-actions">
+                    <a href="@Url.Action("Solve", new { id = quiz.Id })" class="quiz-btn solve-btn">
+                        <span class="material-icons">play_arrow</span>
+                        Rozpocznij Quiz
+                    </a>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div> 

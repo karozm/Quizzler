@@ -1,32 +1,49 @@
 @model IEnumerable<MvcPracownicy.Models.Quiz>
-
 @{
-    ViewData["Title"] = "Quizzes";
+    ViewData["Title"] = "Quizy";
+    Layout = "_AuthenticatedLayout";
 }
 
-<h1>Quizzes</h1>
+<div class="quiz-list-container">
+    <div class="quiz-header">
+        <h1>Twoje Quizy</h1>
+        <a href="@Url.Action("Create")" class="btn-create">
+            <span class="material-icons">add</span>
+            Stwórz nowy quiz
+        </a>
+    </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New Quiz</a>
-</p>
-
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Title</h5>
-                    <p class="card-text">@item.Description</p>
-                    <p class="card-text"><small class="text-muted">Created: @item.CreatedAt.ToString("d")</small></p>
-                    <p class="card-text"><small class="text-muted">Questions: @item.Questions.Count</small></p>
-                    <div class="btn-group">
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+    <div class="quiz-grid">
+        @foreach (var quiz in Model)
+        {
+            <div class="quiz-card">
+                <div class="quiz-card-content">
+                    <h3>@quiz.Title</h3>
+                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)</p>
+                    <div class="quiz-meta">
+                        <span class="quiz-date">
+                            <span class="material-icons">calendar_today</span>
+                            @quiz.CreatedAt.ToString("dd.MM.yyyy")
+                        </span>
+                        <span class="quiz-questions">
+                            <span class="material-icons">quiz</span>
+                            @quiz.Questions.Count pytań
+                        </span>
                     </div>
                 </div>
+                <div class="quiz-actions">
+                    <a href="@Url.Action("Details", new { id = quiz.Id })" class="quiz-btn">
+                        <span class="material-icons">edit</span>
+                        Edytuj
+                    </a>
+                    <form asp-action="Delete" asp-route-id="@quiz.Id" method="post" class="delete-form">
+                        <button type="submit" class="quiz-btn delete" onclick="return confirm('Czy na pewno chcesz usunąć ten quiz?')">
+                            <span class="material-icons">delete</span>
+                            Usuń
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

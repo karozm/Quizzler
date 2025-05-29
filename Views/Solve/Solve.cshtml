@@ -1,39 +1,51 @@
 @model MvcPracownicy.Models.Quiz
 
 @{
-    ViewData["Title"] = "Solve Quiz";
+    ViewData["Title"] = "Rozwiązywanie Quizu";
+    Layout = "_AuthenticatedLayout";
 }
 
-<div class="container">
-    <h1>@Model.Title</h1>
-    @if (!string.IsNullOrEmpty(Model.Description))
-    {
-        <p class="lead">@Model.Description</p>
-    }
+<div class="solve-container">
+    <div class="quiz-header">
+        <h1>@Model.Title</h1>
+        @if (!string.IsNullOrEmpty(Model.Description))
+        {
+            <p class="quiz-description">@Model.Description</p>
+        }
+    </div>
 
-    <form asp-action="Submit" asp-route-id="@Model.Id" method="post">
+    <form asp-action="Submit" asp-route-id="@Model.Id" method="post" class="solve-form">
         @foreach (var question in Model.Questions)
         {
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">@question.Content</h5>
-                    <div class="list-group mt-3">
-                        @foreach (var answer in question.Answers)
-                        {
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="answers[@question.Id]" value="@answer.Id" id="answer_@answer.Id">
-                                <label class="form-check-label" for="answer_@answer.Id">
-                                    @answer.Content
-                                </label>
-                            </div>
-                        }
-                    </div>
+            <div class="question-card">
+                <h3 class="question-content">
+                    <span class="material-icons">help_outline</span>
+                    @question.Content
+                </h3>
+                <div class="answers-list">
+                    @foreach (var answer in question.Answers)
+                    {
+                        <div class="answer-option">
+                            <input type="radio" 
+                                   name="answers[@question.Id]" 
+                                   value="@answer.Id" 
+                                   id="answer_@answer.Id" 
+                                   required 
+                                   class="answer-radio" />
+                            <label for="answer_@answer.Id" class="answer-label">
+                                @answer.Content
+                            </label>
+                        </div>
+                    }
                 </div>
             </div>
         }
 
-        <div class="text-center mb-4">
-            <button type="submit" class="btn btn-primary btn-lg">Submit Answers</button>
+        <div class="submit-section">
+            <button type="submit" class="submit-btn">
+                <span class="material-icons">check_circle</span>
+                Zakończ i sprawdź wyniki
+            </button>
         </div>
     </form>
 </div> 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jX9WgPxBKQmdEiwkcBoSdl1dazoZaY7xWJgCwhHLt4w=",
+  "Hash": "Uc7NOfMkfRQDp24pQXZvpsbVpTuiQ8U3dX6FlLfR2BQ=",
   "Source": "MvcPracownicy",
   "BasePath": "_content/MvcPracownicy",
   "Mode": "Default",
@@ -1151,6 +1151,27 @@
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
+      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-z63uve1lt2.gz",
+      "SourceId": "MvcPracownicy",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/MvcPracownicy",
+      "RelativePath": "css/login#[.{fingerprint=z63uve1lt2}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "1b8ufjcxjo",
+      "Integrity": "c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css"
+    },
+    {
       "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tzv8pq778x-ausgxo2sd3.gz",
       "SourceId": "MvcPracownicy",
       "SourceType": "Discovered",
@@ -1401,6 +1422,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\MvcPracownicy.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
+      "SourceId": "MvcPracownicy",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\",
+      "BasePath": "_content/MvcPracownicy",
+      "RelativePath": "css/login#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z63uve1lt2",
+      "Integrity": "qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\site.css",
@@ -2727,6 +2769,304 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-z63uve1lt2.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000405679513"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2464"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12444"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-z63uve1lt2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2464"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.z63uve1lt2.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-z63uve1lt2.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000405679513"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2464"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z63uve1lt2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.z63uve1lt2.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12444"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z63uve1lt2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qzK01gbws8AVyA+b7veklvhgSWeeiEdCBsrJ7MyawbQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.z63uve1lt2.css.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-z63uve1lt2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2464"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 21:04:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z63uve1lt2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c9/RX2bLmc7OJytdkle+EubnF3DtIIgCbL87XJVX660="
+        }
+      ]
+    },
     {
       "Route": "css/site.b9sayid5wm.css",
       "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\hf0v76d2hp-b9sayid5wm.gz",
