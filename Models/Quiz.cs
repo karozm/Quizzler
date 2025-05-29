@@ -15,9 +15,6 @@ namespace MvcPracownicy.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        [Required]
-        public string CreatorId { get; set; } = string.Empty;
-
         public ICollection<Question> Questions { get; set; } = new List<Question>();
     }
 }
