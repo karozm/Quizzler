@@ -582,7 +582,6 @@ C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\MvcPracown
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\scopedcss\bundle\MvcPracownicy.styles.css
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\scopedcss\projectbundle\MvcPracownicy.bundle.scp.css
-C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\hf0v76d2hp-b9sayid5wm.gz
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\whnlmrvhim-61n19gt1b8.gz
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\hjehfici4n-xtxxf3hu2r.gz
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\w2tmc8bo05-t1cqhe9u97.gz
@@ -657,3 +656,4 @@ C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\MvcPracown
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\MvcPracownicy.genruntimeconfig.cache
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\ref\MvcPracownicy.dll
 C:\Users\koteke\Desktop\Quizzler\Quizzler\obj\Debug\net9.0\compressed\tpwx4efs3m-ab9jc7bet3.gz
+C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\tpwx4efs3m-qu03cnwbrt.gz

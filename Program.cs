@@ -1,13 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MvcPracownicy.Data;
 using MvcPracownicy.Models;
-
+using MvcPracownicy.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=app.db"));
-
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
@@ -21,11 +20,9 @@ using (var scope = app.Services.CreateScope())
     DbInitializer.Initialize(dbContext);
 }
 
-
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-
     app.UseHsts();
 }
 
@@ -33,6 +30,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseSession();
+
+// Add API key authentication middleware
+app.UseMiddleware<ApiKeyAuthMiddleware>();
 
 app.UseAuthorization();
 

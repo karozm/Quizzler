@@ -6,11 +6,14 @@
 
 <div class="quiz-list-container">
     <div class="quiz-header">
-        <h1>Twoje Quizy</h1>
-        <a href="@Url.Action("Create")" class="btn-create">
-            <span class="material-icons">add</span>
-            Stwórz nowy quiz
-        </a>
+        <h1>Quizy</h1>
+        @if (ViewBag.IsAdmin)
+        {
+            <a href="@Url.Action("Create")" class="btn-create">
+                <span class="material-icons">add</span>
+                Stwórz nowy quiz
+            </a>
+        }
     </div>
 
     <div class="quiz-grid">
@@ -19,7 +22,8 @@
             <div class="quiz-card">
                 <div class="quiz-card-content">
                     <h3>@quiz.Title</h3>
-                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)</p>
+                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)
+                    </p>
                     <div class="quiz-meta">
                         <span class="quiz-date">
                             <span class="material-icons">calendar_today</span>
@@ -32,16 +36,27 @@
                     </div>
                 </div>
                 <div class="quiz-actions">
-                    <a href="@Url.Action("Details", new { id = quiz.Id })" class="quiz-btn">
-                        <span class="material-icons">edit</span>
-                        Edytuj
-                    </a>
-                    <form asp-action="Delete" asp-route-id="@quiz.Id" method="post" class="delete-form">
-                        <button type="submit" class="quiz-btn delete" onclick="return confirm('Czy na pewno chcesz usunąć ten quiz?')">
-                            <span class="material-icons">delete</span>
-                            Usuń
-                        </button>
-                    </form>
+                    @if (ViewBag.IsAdmin)
+                    {
+                        <a href="@Url.Action("Details", new { id = quiz.Id })" class="quiz-btn">
+                            <span class="material-icons">edit</span>
+                            Edytuj
+                        </a>
+                        <form asp-action="Delete" asp-route-id="@quiz.Id" method="post" class="delete-form">
+                            <button type="submit" class="quiz-btn delete"
+                                onclick="return confirm('Czy na pewno chcesz usunąć ten quiz?')">
+                                <span class="material-icons">delete</span>
+                                Usuń
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Solve", "Solve", new { id = quiz.Id })" class="quiz-btn">
+                            <span class="material-icons">play_arrow</span>
+                            Rozwiąż quiz
+                        </a>
+                    }
                 </div>
             </div>
         }

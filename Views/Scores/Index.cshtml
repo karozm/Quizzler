@@ -1,0 +1,76 @@
+@model IEnumerable<MvcPracownicy.Models.Score>
+
+@{
+    ViewData["Title"] = "Quiz Scores";
+    Layout = "_AuthenticatedLayout";
+}
+
+<div class="welcome-banner">
+    <div class="banner-content">
+        <h1 class="app-title">Wyniki Quizów</h1>
+        <p class="banner-text">Przeglądaj wyniki wszystkich użytkowników</p>
+    </div>
+</div>
+
+<div class="quiz-list-container">
+    <div class="quiz-card">
+        <div class="quiz-card-content">
+            <div class="quiz-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Użytkownik</th>
+                            <th>Quiz</th>
+                            <th>Punkty</th>
+                            <th>Maks. Punkty</th>
+                            <th>Procent</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var score in Model)
+                        {
+                            <tr>
+                                <td>@score.User.LoginName</td>
+                                <td>@score.Quiz.Title</td>
+                                <td>@score.Points</td>
+                                <td>@score.MaxPoints</td>
+                                <td>@Math.Round((double)score.Points / score.MaxPoints * 100, 2)%</td>
+                                <td>@score.CompletedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .quiz-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .quiz-table table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #FFFDD0;
+    }
+
+    .quiz-table th,
+    .quiz-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .quiz-table th {
+        background-color: rgba(255, 255, 255, 0.1);
+        font-weight: 600;
+    }
+
+    .quiz-table tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+</style>

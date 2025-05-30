@@ -2,50 +2,82 @@
 
 @{
     ViewData["Title"] = "Quiz Details";
+    Layout = "_AuthenticatedLayout";
 }
 
-<h1>@Model.Title</h1>
-
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">Description</h5>
-        <p class="card-text">@Model.Description</p>
-        <p class="card-text"><small class="text-muted">Created: @Model.CreatedAt.ToString("d")</small></p>
+<div class="welcome-banner">
+    <div class="banner-content">
+        <h1 class="app-title">@Model.Title</h1>
+        @if (!string.IsNullOrEmpty(Model.Description))
+        {
+            <p class="banner-text">@Model.Description</p>
+        }
+        <p class="banner-text"><small>Utworzono: @Model.CreatedAt.ToString("dd.MM.yyyy")</small></p>
     </div>
 </div>
 
-<h2>Questions</h2>
+<div class="quiz-list-container">
+    <h2>Pytania</h2>
 
-<div class="mb-3">
-    <a asp-controller="Question" asp-action="Create" asp-route-quizId="@Model.Id" class="btn btn-primary">Add Question</a>
-</div>
+    @if (ViewBag.IsAdmin)
+    {
+        <div class="mb-3">
+            <a asp-controller="Question" asp-action="Create" asp-route-quizId="@Model.Id" class="quiz-btn">
+                <span class="material-icons">add</span>
+                Dodaj pytanie
+            </a>
+        </div>
+    }
 
-@foreach (var question in Model.Questions)
-{
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">@question.Content</h5>
-                <div class="list-group">
+    @foreach (var question in Model.Questions)
+    {
+        <div class="quiz-card mb-4">
+            <div class="quiz-card-content">
+                <h3 class="question-title">
+                    <span class="material-icons">help_outline</span>
+                    @question.Content
+                </h3>
+                <div class="answers-list">
                     @foreach (var answer in question.Answers)
                     {
-                            <div class="list-group-item">
-                                @answer.Content
-                                @if (answer.IsCorrect)
-                                {
-                                        <span class="badge bg-success float-end">Correct</span>
-                                }
-                            </div>
+                        <div class="answer-item @(answer.IsCorrect ? "correct-answer" : "")">
+                            @answer.Content
+                            @if (answer.IsCorrect)
+                            {
+                                <span class="material-icons">check_circle</span>
+                            }
+                        </div>
                     }
                 </div>
-                <div class="mt-3">
-                    <a asp-controller="Question" asp-action="Edit" asp-route-id="@question.Id" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-controller="Question" asp-action="Delete" asp-route-id="@question.Id" class="btn btn-danger btn-sm">Delete</a>
-                </div>
+                @if (ViewBag.IsAdmin)
+                {
+                    <div class="question-actions mt-3">
+                        <a asp-controller="Question" asp-action="Edit" asp-route-id="@question.Id" class="quiz-btn">
+                            <span class="material-icons">edit</span>
+                            Edytuj
+                        </a>
+                        <a asp-controller="Question" asp-action="Delete" asp-route-id="@question.Id" class="quiz-btn delete"
+                            onclick="return confirm('Czy na pewno chcesz usunąć to pytanie?')">
+                            <span class="material-icons">delete</span>
+                            Usuń
+                        </a>
+                    </div>
+                }
             </div>
         </div>
-}
+    }
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit Quiz</a>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-</div> 
+    <div class="quiz-actions">
+        @if (ViewBag.IsAdmin)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="quiz-btn">
+                <span class="material-icons">edit</span>
+                Edytuj quiz
+            </a>
+        }
+        <a asp-action="Index" class="quiz-btn">
+            <span class="material-icons">arrow_back</span>
+            Powrót do listy
+        </a>
+    </div>
+</div>

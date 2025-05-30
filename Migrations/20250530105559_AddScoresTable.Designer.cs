@@ -11,8 +11,8 @@ using MvcPracownicy.Data;
 namespace MvcPracownicy.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250528195813_AddQuizModels")]
-    partial class AddQuizModels
+    [Migration("20250530105559_AddScoresTable")]
+    partial class AddScoresTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,40 @@ namespace MvcPracownicy.Migrations
                     b.HasIndex("QuestionId");
 
                     b.ToTable("Answers");
+                });
+
+            modelBuilder.Entity("MvcPracownicy.Models.ApiKey", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ExpiresAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("LoginId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LoginId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ApiKeys");
                 });
 
             modelBuilder.Entity("MvcPracownicy.Models.Dane", b =>
@@ -122,6 +156,36 @@ namespace MvcPracownicy.Migrations
                     b.ToTable("Quizzes");
                 });
 
+            modelBuilder.Entity("MvcPracownicy.Models.Score", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MaxPoints")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("QuizId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuizId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Scores");
+                });
+
             modelBuilder.Entity("MvcPracownicy.Models.Answer", b =>
                 {
                     b.HasOne("MvcPracownicy.Models.Question", "Question")
@@ -133,6 +197,21 @@ namespace MvcPracownicy.Migrations
                     b.Navigation("Question");
                 });
 
+            modelBuilder.Entity("MvcPracownicy.Models.ApiKey", b =>
+                {
+                    b.HasOne("MvcPracownicy.Models.Login", null)
+                        .WithMany("ApiKeys")
+                        .HasForeignKey("LoginId");
+
+                    b.HasOne("MvcPracownicy.Models.Login", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MvcPracownicy.Models.Question", b =>
                 {
                     b.HasOne("MvcPracownicy.Models.Quiz", "Quiz")
@@ -142,6 +221,30 @@ namespace MvcPracownicy.Migrations
                         .IsRequired();
 
                     b.Navigation("Quiz");
+                });
+
+            modelBuilder.Entity("MvcPracownicy.Models.Score", b =>
+                {
+                    b.HasOne("MvcPracownicy.Models.Quiz", "Quiz")
+                        .WithMany()
+                        .HasForeignKey("QuizId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MvcPracownicy.Models.Login", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Quiz");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MvcPracownicy.Models.Login", b =>
+                {
+                    b.Navigation("ApiKeys");
                 });
 
             modelBuilder.Entity("MvcPracownicy.Models.Question", b =>

@@ -8,10 +8,6 @@
 <div class="solve-container">
     <div class="quiz-header">
         <h1>@Model.Title</h1>
-        @if (!string.IsNullOrEmpty(Model.Description))
-        {
-            <p class="quiz-description">@Model.Description</p>
-        }
     </div>
 
     <form asp-action="Submit" asp-route-id="@Model.Id" method="post" class="solve-form">
@@ -26,12 +22,8 @@
                     @foreach (var answer in question.Answers)
                     {
                         <div class="answer-option">
-                            <input type="radio" 
-                                   name="answers[@question.Id]" 
-                                   value="@answer.Id" 
-                                   id="answer_@answer.Id" 
-                                   required 
-                                   class="answer-radio" />
+                            <input type="radio" name="answers[@question.Id]" value="@answer.Id" id="answer_@answer.Id" required
+                                class="answer-radio" />
                             <label for="answer_@answer.Id" class="answer-label">
                                 @answer.Content
                             </label>
@@ -48,4 +40,4 @@
             </button>
         </div>
     </form>
-</div> 
+</div>

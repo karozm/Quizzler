@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <nav class="top-nav">
         <div class="nav-content">
@@ -18,12 +20,23 @@
                 <span class="logo-text">QUIZZLER</span>
             </a>
             <div class="nav-links">
-                <a href="/Home/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">Home</a>
-                <a href="/Quiz/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Quiz" ? "active" : "")">Quizy</a>
-                <a href="/Solve/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Solve" ? "active" : "")">Rozwiąż Quiz</a>
+                <a href="/Home/Index"
+                    class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">Home</a>
                 @if (Context.Session.GetString("_UserRole") == "admin")
                 {
-                    <a href="/DataManager/Index" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "DataManager" ? "active" : "")">Panel Admina</a>
+                    <a href="/Quiz/Index"
+                        class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Quiz" ? "active" : "")">Quizy</a>
+                }
+                <a href="/Solve/Index"
+                    class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Solve" ? "active" : "")">Rozwiąż
+                    Quiz</a>
+                <a href="/Scores/Index"
+                    class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Scores" ? "active" : "")">Wyniki</a>
+                @if (Context.Session.GetString("_UserRole") == "admin")
+                {
+                    <a href="/DataManager/Index"
+                        class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "DataManager" ? "active" : "")">Panel
+                        Admina</a>
                 }
             </div>
             <div class="nav-right">
@@ -40,4 +53,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html> 
+
+</html>

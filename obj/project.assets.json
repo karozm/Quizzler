@@ -3111,19 +3111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\koteke\\.nuget\\packages\\": {}
+    "C:\\Users\\slota\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\MvcPracownicy.csproj",
+      "projectUniqueName": "C:\\Users\\slota\\Documents\\VS Code\\Studia\\PZ2\\Quizzler\\MvcPracownicy.csproj",
       "projectName": "MvcPracownicy",
-      "projectPath": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\MvcPracownicy.csproj",
-      "packagesPath": "C:\\Users\\koteke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\",
+      "projectPath": "C:\\Users\\slota\\Documents\\VS Code\\Studia\\PZ2\\Quizzler\\MvcPracownicy.csproj",
+      "packagesPath": "C:\\Users\\slota\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\slota\\Documents\\VS Code\\Studia\\PZ2\\Quizzler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\koteke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\slota\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3147,7 +3147,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -3189,7 +3189,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

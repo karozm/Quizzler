@@ -17,6 +17,7 @@ namespace MvcPracownicy.Controllers
         // GET: Quiz
         public async Task<IActionResult> Index()
         {
+            ViewBag.IsAdmin = HttpContext.Session.GetString("_UserRole") == "admin";
             return View(await _context.Quizzes.Include(q => q.Questions).ToListAsync());
         }
 
@@ -38,12 +39,17 @@ namespace MvcPracownicy.Controllers
                 return NotFound();
             }
 
+            ViewBag.IsAdmin = HttpContext.Session.GetString("_UserRole") == "admin";
             return View(quiz);
         }
 
         // GET: Quiz/Create
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
@@ -52,6 +58,11 @@ namespace MvcPracownicy.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,Description")] Quiz quiz)
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
+
             if (ModelState.IsValid)
             {
                 quiz.CreatedAt = DateTime.Now;
@@ -65,6 +76,11 @@ namespace MvcPracownicy.Controllers
         // GET: Quiz/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -83,6 +99,11 @@ namespace MvcPracownicy.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,CreatedAt")] Quiz quiz)
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
+
             if (id != quiz.Id)
             {
                 return NotFound();
@@ -114,6 +135,11 @@ namespace MvcPracownicy.Controllers
         // GET: Quiz/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -134,6 +160,11 @@ namespace MvcPracownicy.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            {
+                return RedirectToAction("Index");
+            }
+
             var quiz = await _context.Quizzes.FindAsync(id);
             if (quiz != null)
             {

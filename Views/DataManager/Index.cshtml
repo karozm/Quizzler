@@ -1,17 +1,53 @@
 @{
-    ViewData["Title"] = "Data Manager";
+    ViewData["Title"] = "Panel Admina";
+    Layout = "_AuthenticatedLayout";
 }
 
-<div class="container">
-    <h1 class="mb-4">Data Manager</h1>
-    <p class="lead">Welcome to the admin panel. This section is only accessible to administrators.</p>
-
-    <div class="list-group">
-        <a asp-action="Users" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">User Management</h5>
-            </div>
-            <p class="mb-1">View and manage system users</p>
-        </a>
+<div class="welcome-banner">
+    <div class="banner-content">
+        <h1 class="app-title">Panel Administratora</h1>
+        <p class="banner-text">Zarządzaj systemem i użytkownikami</p>
     </div>
-</div> 
+</div>
+
+<div class="quiz-list-container">
+    <div class="quiz-grid">
+        <div class="quiz-card">
+            <div class="quiz-card-content">
+                <h3>Zarządzanie Użytkownikami</h3>
+                <p class="quiz-description">Dodawaj, edytuj i usuwaj konta użytkowników w systemie.</p>
+                <div class="quiz-meta">
+                    <span class="quiz-questions">
+                        <span class="material-icons">people</span>
+                        Zarządzaj Użytkownikami
+                    </span>
+                </div>
+            </div>
+            <div class="quiz-actions">
+                <a asp-action="Users" class="quiz-btn">
+                    <span class="material-icons">people</span>
+                    Zarządzaj Użytkownikami
+                </a>
+            </div>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-card-content">
+                <h3>Zarządzanie Quizami</h3>
+                <p class="quiz-description">Przeglądaj i zarządzaj wszystkimi quizami w systemie.</p>
+                <div class="quiz-meta">
+                    <span class="quiz-questions">
+                        <span class="material-icons">quiz</span>
+                        Zarządzaj Quizami
+                    </span>
+                </div>
+            </div>
+            <div class="quiz-actions">
+                <a href="/Quiz/Index" class="quiz-btn">
+                    <span class="material-icons">quiz</span>
+                    Zarządzaj Quizami
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    Layout = "_AuthenticatedLayout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="welcome-banner">
+    <div class="banner-content">
+        <h1 class="app-title">QUIZZLER</h1>
+        <p class="banner-text">Twórz niezapomniane quizy i sprawdzaj wiedzę w wyjątkowy sposób</p>
+    </div>
+</div>
+
+<div class="quiz-list-container">
+    <div class="quiz-grid">
+        @if (Context.Session.GetString("_UserRole") == "admin")
+        {
+            <div class="quiz-card">
+                <div class="quiz-card-content">
+                    <h3>Quizy</h3>
+                    <p class="quiz-description">Przeglądaj i zarządzaj quizami w systemie</p>
+                    <div class="quiz-meta">
+                        <span class="quiz-questions">
+                            <span class="material-icons">quiz</span>
+                            Zarządzaj Quizami
+                        </span>
+                    </div>
+                </div>
+                <div class="quiz-actions">
+                    <a href="/Quiz/Index" class="quiz-btn">
+                        <span class="material-icons">quiz</span>
+                        Zarządzaj Quizami
+                    </a>
+                </div>
+            </div>
+        }
+
+        <div class="quiz-card">
+            <div class="quiz-card-content">
+                <h3>Rozwiąż Quiz</h3>
+                <p class="quiz-description">Sprawdź swoją wiedzę rozwiązując dostępne quizy</p>
+                <div class="quiz-meta">
+                    <span class="quiz-questions">
+                        <span class="material-icons">play_arrow</span>
+                        Rozpocznij Quiz
+                    </span>
+                </div>
+            </div>
+            <div class="quiz-actions">
+                <a href="/Solve/Index" class="quiz-btn">
+                    <span class="material-icons">play_arrow</span>
+                    Rozpocznij Quiz
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -9,6 +9,7 @@ namespace MvcPracownicy.Controllers
     {
         private const string SessionKeyLoggedIn = "_IsLoggedIn";
         private const string SessionKeyRole = "_UserRole";
+        private const string SessionKeyUserId = "_UserId";
         private readonly AppDbContext _context;
 
         public IOController(AppDbContext context)
@@ -30,15 +31,17 @@ namespace MvcPracownicy.Controllers
             {
                 HttpContext.Session.SetString(SessionKeyLoggedIn, "true");
                 HttpContext.Session.SetString(SessionKeyRole, "admin");
+                HttpContext.Session.SetString(SessionKeyUserId, "1"); // Admin ma ID 1
                 return RedirectToAction("Zalogowano");
             }
 
             // Sprawdź zwykłego użytkownika
             var user = _context.Logins.SingleOrDefault(l => l.LoginName == login);
-            if (user != null && user.Haslo == GetMd5Hash(haslo)) 
+            if (user != null && user.Haslo == GetMd5Hash(haslo))
             {
                 HttpContext.Session.SetString(SessionKeyLoggedIn, "true");
                 HttpContext.Session.SetString(SessionKeyRole, "user");
+                HttpContext.Session.SetString(SessionKeyUserId, user.Id.ToString());
                 return RedirectToAction("Zalogowano");
             }
 
@@ -62,6 +65,7 @@ namespace MvcPracownicy.Controllers
         {
             HttpContext.Session.Remove(SessionKeyLoggedIn);
             HttpContext.Session.Remove(SessionKeyRole);
+            HttpContext.Session.Remove(SessionKeyUserId);
             return RedirectToAction("Logowanie");
         }
 

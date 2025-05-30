@@ -17,137 +17,145 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MvcPracownicy
 build_property.RootNamespace = MvcPracownicy
-build_property.ProjectDir = C:\Users\koteke\Desktop\Quizzler\Quizzler\
+build_property.ProjectDir = C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\koteke\Desktop\Quizzler\Quizzler
+build_property.MSBuildProjectDirectory = C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Answer/Create.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Answer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2VyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Answer/Delete.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Answer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2VyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Answer/Edit.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Answer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2VyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/DataManager/Index.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/DataManager/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YU1hbmFnZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/DataManager/Users.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/DataManager/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YU1hbmFnZXJcVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Home/Index.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Home/Privacy.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/IO/AddDane.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/IO/AddDane.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSU9cQWRkRGFuZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/IO/Dane.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/IO/Dane.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSU9cRGFuZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/IO/Logowanie.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/IO/Logowanie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSU9cTG9nb3dhbmllLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/IO/Zalogowano.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/IO/Zalogowano.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSU9cWmFsb2dvd2Fuby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Question/Create.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Question/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Question/Delete.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Question/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Question/Edit.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Question/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Quiz/Create.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Quiz/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Quiz/Delete.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Quiz/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Quiz/Details.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Quiz/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Quiz/Edit.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Quiz/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Quiz/Index.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Quiz/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Sekret/Add.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Scores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Scores/UserScores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXFVzZXJTY29yZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Sekret/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VrcmV0XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Sekret/Index.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Sekret/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VrcmV0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Shared/Error.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Shared/_AuthenticatedLayout.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Shared/_AuthenticatedLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoZW50aWNhdGVkTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Solve/Index.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Solve/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29sdmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Solve/Result.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Solve/Result.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29sdmVcUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Solve/Solve.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Solve/Solve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29sdmVcU29sdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Solve/ViewAnswers.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Solve/ViewAnswers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29sdmVcVmlld0Fuc3dlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/_ViewImports.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/_ViewStart.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koteke/Desktop/Quizzler/Quizzler/Views/Shared/_Layout.cshtml]
+[C:/Users/slota/Documents/VS Code/Studia/PZ2/Quizzler/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wwpj3lhugh

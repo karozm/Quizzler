@@ -1,47 +1,57 @@
 @model MvcPracownicy.Models.Quiz
 @{
-    ViewData["Title"] = "Quiz Answers";
+    ViewData["Title"] = "Odpowiedzi Quizu";
+    Layout = "_AuthenticatedLayout";
     var userAnswers = (Dictionary<string, string[]>)ViewData["UserAnswers"];
 }
 
-<div class="container">
-    <h1 class="mb-4">@Model.Title - Answers</h1>
-    @if (!string.IsNullOrEmpty(Model.Description))
-    {
-        <p class="lead mb-4">@Model.Description</p>
-    }
+<div class="welcome-banner">
+    <div class="banner-content">
+        <h1 class="app-title">@Model.Title</h1>
+        @if (!string.IsNullOrEmpty(Model.Description))
+        {
+            <p class="banner-text">@Model.Description</p>
+        }
+    </div>
+</div>
 
+<div class="quiz-list-container">
     @foreach (var question in Model.Questions)
     {
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">@question.Content</h5>
-                <div class="list-group mt-3">
+        <div class="quiz-card mb-4">
+            <div class="quiz-card-content">
+                <h3 class="question-title">
+                    <span class="material-icons">help_outline</span>
+                    @question.Content
+                </h3>
+                <div class="answers-list">
                     @foreach (var answer in question.Answers)
                     {
                         string userAnswerId = userAnswers.ContainsKey($"{question.Id}") ? userAnswers[$"{question.Id}"][0] : "";
                         bool isUserAnswer = userAnswerId == answer.Id.ToString();
-                        string textClass = "";
+                        string answerClass = "";
 
                         if (answer.IsCorrect)
                         {
-                            textClass = "text-success fw-bold";
+                            answerClass = "correct-answer";
                         }
                         else if (isUserAnswer && !answer.IsCorrect)
                         {
-                            textClass = "text-danger fw-bold";
+                            answerClass = "wrong-answer";
                         }
 
-                        <div class="list-group-item @textClass">
-                            @answer.Content
-                            @if (answer.IsCorrect)
-                            {
-                                <i class="bi bi-check-circle-fill text-success ms-2"></i>
-                            }
-                            @if (isUserAnswer && !answer.IsCorrect)
-                            {
-                                <i class="bi bi-x-circle-fill text-danger ms-2"></i>
-                            }
+                        <div class="answer-item @answerClass">
+                            <span class="material-icons answer-icon">
+                                @if (answer.IsCorrect)
+                                {
+                                    <text>check_circle</text>
+                                }
+                                else if (isUserAnswer && !answer.IsCorrect)
+                                {
+                                    <text>cancel</text>
+                                }
+                            </span>
+                            <span class="answer-text">@answer.Content</span>
                         </div>
                     }
                 </div>
@@ -49,7 +59,54 @@
         </div>
     }
 
-    <div class="text-center mb-4">
-        <a asp-action="Index" class="btn btn-primary btn-lg">Back to Quiz List</a>
+    <div class="quiz-actions text-center">
+        <a asp-action="Index" class="quiz-btn">
+            <span class="material-icons">list</span>
+            Lista Quizów
+        </a>
     </div>
-</div> 
+</div>
+
+<style>
+    .question-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #FFFDD0;
+        margin-bottom: 1.5rem;
+    }
+
+    .answers-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .answer-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: rgba(255, 253, 208, 0.8);
+    }
+
+    .answer-icon {
+        color: #FFFDD0;
+    }
+
+    .correct-answer {
+        background-color: rgba(40, 167, 69, 0.2);
+        border: 1px solid rgba(40, 167, 69, 0.3);
+    }
+
+    .wrong-answer {
+        background-color: rgba(220, 53, 69, 0.2);
+        border: 1px solid rgba(220, 53, 69, 0.3);
+    }
+
+    .answer-text {
+        flex: 1;
+    }
+</style>

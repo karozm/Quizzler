@@ -269,7 +269,7 @@ body {
 
 /* Page content styles */
 .page-content {
-    margin-top: 80px;
+    margin-top: 1vw;
     min-height: calc(100vh - 80px);
     width: 100%;
     position: relative;
@@ -444,14 +444,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    min-height: calc(100vh - 80px);
 }
 
 .solve-container .quiz-header {
     padding: 2rem 0;
     text-align: center;
-    flex-shrink: 0;
     margin-bottom: 2rem;
+    margin-top: 500px;
 }
 
 .solve-container .quiz-header h1 {

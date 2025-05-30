@@ -15,10 +15,11 @@
             <div class="quiz-card solve-card">
                 <div class="quiz-card-content">
                     <h3>@quiz.Title</h3>
-                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)</p>
+                    <p class="quiz-description">@(string.IsNullOrEmpty(quiz.Description) ? "Brak opisu" : quiz.Description)
+                    </p>
                     <div class="quiz-meta">
                         <span class="quiz-questions">
-                            <span class="material-icons">quiz</span>
+                            <span class="material-icons">help_outline</span>
                             @quiz.Questions.Count pytań
                         </span>
                     </div>
@@ -32,4 +33,4 @@
             </div>
         }
     </div>
-</div> 
+</div>

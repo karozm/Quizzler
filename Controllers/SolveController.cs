@@ -17,7 +17,9 @@ namespace MvcPracownicy.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var quizzes = await _context.Quizzes.ToListAsync();
+            var quizzes = await _context.Quizzes
+                .Include(q => q.Questions)
+                .ToListAsync();
             return View(quizzes);
         }
 
@@ -87,6 +89,26 @@ namespace MvcPracownicy.Controllers
             }
             ViewData["Message"] = message;
 
+            // Save the score
+            var userIdStr = HttpContext.Session.GetString("_UserId");
+            if (string.IsNullOrEmpty(userIdStr))
+            {
+                return RedirectToAction("Logowanie", "IO");
+            }
+
+            var userId = int.Parse(userIdStr);
+            var newScore = new Score
+            {
+                UserId = userId,
+                QuizId = id,
+                Points = score,
+                MaxPoints = quiz.Questions.Count,
+                CompletedAt = DateTime.Now
+            };
+
+            _context.Scores.Add(newScore);
+            await _context.SaveChangesAsync();
+
             TempData["UserAnswers"] = JsonSerializer.Serialize(answers);
             TempData["QuizId"] = id;
 
@@ -106,8 +128,8 @@ namespace MvcPracownicy.Controllers
             }
 
             var userAnswersJson = TempData["UserAnswers"] as string;
-            var userAnswers = userAnswersJson != null 
-                ? JsonSerializer.Deserialize<Dictionary<string, string[]>>(userAnswersJson) 
+            var userAnswers = userAnswersJson != null
+                ? JsonSerializer.Deserialize<Dictionary<string, string[]>>(userAnswersJson)
                 : new Dictionary<string, string[]>();
 
             ViewData["UserAnswers"] = userAnswers;
@@ -115,4 +137,4 @@ namespace MvcPracownicy.Controllers
             return View(quiz);
         }
     }
-} 
+}
