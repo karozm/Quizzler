@@ -2,49 +2,90 @@
 
 @{
     ViewData["Title"] = "Create Question";
+    Layout = "_AuthenticatedLayout";
 }
 
-<h1>Create New Question</h1>
+<div class="quiz-form-container">
+    <h1>Create New Question</h1>
 
-<div class="row">
-    <div class="col-md-8">
-        <form asp-action="Create" id="questionForm">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <input type="hidden" name="QuizId" value="@ViewBag.QuizId" />
+    <form asp-action="Create" id="questionForm" class="quiz-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" name="QuizId" value="@ViewBag.QuizId" />
 
-            <div class="form-group mb-3">
-                <label asp-for="Content" class="control-label">Question</label>
-                <textarea asp-for="Content" class="form-control" rows="3" required></textarea>
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
+        <div class="form-group">
+            <label asp-for="Content" class="control-label">Question Text</label>
+            <textarea asp-for="Content" class="form-control" rows="3" placeholder="Enter your question" required></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
 
-            <h3 class="mt-4">Answer Choices</h3>
-            <div class="card mb-3">
-                <div class="card-body">
-                    @for (int i = 0; i < 4; i++)
-                    {
-                        <div class="form-group mb-3">
-                            <div class="input-group">
-                                <div class="input-group-text">
-                                    <input type="radio" name="CorrectAnswerIndex" value="@i" class="form-check-input mt-0"
-                                        @(i == 0 ? "checked" : "") required />
-                                </div>
-                                <input type="text" name="Answers" class="form-control answer-input"
-                                    placeholder="Answer @(i + 1)" required />
-                            </div>
+        <h3 class="mt-4">Answer Choices</h3>
+        <div class="answers-section">
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="form-group">
+                    <div class="answer-input-group">
+                        <div class="answer-radio">
+                            <input type="radio" name="CorrectAnswerIndex" value="@i" class="form-check-input"
+                                @(i == 0 ? "checked" : "") required />
+                            <label class="form-check-label">Correct Answer</label>
                         </div>
-                    }
+                        <input type="text" name="Answers" class="form-control" placeholder="Answer @(i + 1)" required />
+                    </div>
                 </div>
-            </div>
+            }
+        </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-controller="Quiz" asp-action="Details" asp-route-id="@ViewBag.QuizId"
-                    class="btn btn-secondary">Back to Quiz</a>
-            </div>
-        </form>
-    </div>
+        <div class="quiz-form-actions">
+            <button type="submit" class="btn-primary">
+                <span class="material-icons">add_circle</span>
+                Create Question
+            </button>
+            <a asp-controller="Quiz" asp-action="Details" asp-route-id="@ViewBag.QuizId" class="btn-secondary">
+                <span class="material-icons">arrow_back</span>
+                Back to Quiz
+            </a>
+        </div>
+    </form>
 </div>
+
+<style>
+    .answers-section {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1.5rem;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .answer-input-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .answer-radio {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 140px;
+    }
+
+    .answer-radio input[type="radio"] {
+        margin: 0;
+    }
+
+    .answer-radio label {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    h3 {
+        color: rgb(75, 8, 88);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+</style>
 
 @section Scripts {
     @{
