@@ -3,63 +3,120 @@
     Layout = "_AuthenticatedLayout";
 }
 
-<div class="welcome-banner">
-    <div class="banner-content">
-        <h1 class="app-title">Wynik Quizu</h1>
-        <p class="banner-text">@ViewData["QuizTitle"]</p>
+<div class="quiz-result-box">
+    <h1 class="quiz-title">Wynik Quizu</h1>
+
+    <div class="score-display">
+        <span class="material-icons icon-large">emoji_events</span>
+        <h2 class="score-value">@ViewData["Score"]%</h2>
     </div>
-</div>
 
-<div class="quiz-list-container">
-    <div class="quiz-card">
-        <div class="quiz-card-content text-center">
-            <div class="score-display">
-                <span class="material-icons" style="font-size: 48px; color: #FFFDD0;">emoji_events</span>
-                <h2 class="score-value">@ViewData["Score"]%</h2>
-            </div>
+    <div class="result-message">
+        <span class="material-icons icon-medium">sentiment_satisfied</span>
+        <h3 class="result-text">@ViewData["Message"]</h3>
+    </div>
 
-            <div class="result-message">
-                <span class="material-icons" style="font-size: 36px; color: #FFFDD0;">sentiment_satisfied</span>
-                <h3>@ViewData["Message"]</h3>
-            </div>
-
-            <div class="quiz-actions mt-4">
-                <a asp-action="ViewAnswers" asp-route-id="@TempData["QuizId"]" class="quiz-btn">
-                    <span class="material-icons">visibility</span>
-                    Zobacz Odpowiedzi
-                </a>
-                <a asp-action="Index" class="quiz-btn">
-                    <span class="material-icons">list</span>
-                    Lista Quizów
-                </a>
-            </div>
-        </div>
+    <div class="quiz-actions">
+        <a asp-action="ViewAnswers" asp-route-id="@TempData["QuizId"]" class="quiz-btn">
+            <span class="material-icons">visibility</span>
+            Zobacz Odpowiedzi
+        </a>
+        <a asp-action="Index" class="quiz-btn">
+            <span class="material-icons">list</span>
+            Lista Quizów
+        </a>
     </div>
 </div>
 
 <style>
+    body {
+        background-color: #534B7F;
+        background-image: 
+            linear-gradient(30deg, #4a4371 12%, transparent 12.5%, transparent 87%, #4a4371 87.5%, #4a4371),
+            linear-gradient(150deg, #4a4371 12%, transparent 12.5%, transparent 87%, #4a4371 87.5%, #4a4371),
+            linear-gradient(30deg, #4a4371 12%, transparent 12.5%, transparent 87%, #4a4371 87.5%, #4a4371),
+            linear-gradient(150deg, #4a4371 12%, transparent 12.5%, transparent 87%, #4a4371 87.5%, #4a4371),
+            linear-gradient(60deg, #4a437177 25%, transparent 25.5%, transparent 75%, #4a437177 75%, #4a437177),
+            linear-gradient(60deg, #4a437177 25%, transparent 25.5%, transparent 75%, #4a437177 75%, #4a437177);
+        background-size: 80px 140px;
+        background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .quiz-result-box {
+        background-color: #4a4371;
+        margin: 100px auto 50px auto; /* oddalone od góry */
+        padding: 2rem 3rem;
+        border-radius: 1.5rem;
+        border: 2px solid rgb(40, 23, 80);
+        max-width: 800px;
+        width: 90%;
+        text-align: center;
+        color: #FFFDD0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .quiz-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #FFFDD0;
+    }
+
     .score-display {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
     }
 
     .score-value {
         font-size: 4rem;
+        margin-top: 0.5rem;
         color: #FFFDD0;
-        margin: 1rem 0;
+    }
+
+    .icon-large {
+        font-size: 48px;
+        color: #FFFDD0;
+    }
+
+    .icon-medium {
+        font-size: 36px;
+        color: #FFFDD0;
     }
 
     .result-message {
         margin: 2rem 0;
     }
 
-    .result-message h3 {
+    .result-text {
+        margin-top: 0.5rem;
         color: #FFFDD0;
-        margin-top: 1rem;
     }
 
     .quiz-actions {
         display: flex;
         justify-content: center;
         gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .quiz-btn {
+        background-color:rgba(166, 132, 230, 0.64);
+        color: #FFFDD0;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background 0.3s ease;
+    }
+
+    .quiz-btn:hover {
+        background-color:rgba(128, 95, 189, 0.64);
     }
 </style>
+
+

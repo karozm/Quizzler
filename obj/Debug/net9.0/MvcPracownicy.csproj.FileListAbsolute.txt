@@ -655,5 +655,5 @@ C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\refint\Mvc
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\MvcPracownicy.pdb
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\MvcPracownicy.genruntimeconfig.cache
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\ref\MvcPracownicy.dll
-C:\Users\koteke\Desktop\Quizzler\Quizzler\obj\Debug\net9.0\compressed\tpwx4efs3m-ab9jc7bet3.gz
 C:\Users\slota\Documents\VS Code\Studia\PZ2\Quizzler\obj\Debug\net9.0\compressed\tpwx4efs3m-qu03cnwbrt.gz
+C:\Users\koteke\Desktop\Quizzler\Quizzler\obj\Debug\net9.0\compressed\tpwx4efs3m-6phrfvzevc.gz

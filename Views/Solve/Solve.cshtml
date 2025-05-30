@@ -6,38 +6,36 @@
 }
 
 <div class="solve-container">
-    <div class="quiz-header">
-        <h1>@Model.Title</h1>
-    </div>
-
-    <form asp-action="Submit" asp-route-id="@Model.Id" method="post" class="solve-form">
-        @foreach (var question in Model.Questions)
-        {
-            <div class="question-card">
-                <h3 class="question-content">
-                    <span class="material-icons">help_outline</span>
-                    @question.Content
-                </h3>
-                <div class="answers-list">
-                    @foreach (var answer in question.Answers)
-                    {
-                        <div class="answer-option">
-                            <input type="radio" name="answers[@question.Id]" value="@answer.Id" id="answer_@answer.Id" required
-                                class="answer-radio" />
-                            <label for="answer_@answer.Id" class="answer-label">
-                                @answer.Content
-                            </label>
-                        </div>
-                    }
+    <div class="questions-wrapper">
+        <form asp-action="Submit" asp-route-id="@Model.Id" method="post" class="solve-form">
+            @foreach (var question in Model.Questions)
+            {
+                <div class="question-card">
+                    <h3 class="question-content">
+                        <span class="material-icons">help_outline</span>
+                        @question.Content
+                    </h3>
+                    <div class="answers-list">
+                        @foreach (var answer in question.Answers)
+                        {
+                            <div class="answer-option">
+                                <input type="radio" name="answers[@question.Id]" value="@answer.Id" id="answer_@answer.Id" required
+                                    class="answer-radio" />
+                                <label for="answer_@answer.Id" class="answer-label">
+                                    @answer.Content
+                                </label>
+                            </div>
+                        }
+                    </div>
                 </div>
-            </div>
-        }
+            }
 
-        <div class="submit-section">
-            <button type="submit" class="submit-btn">
-                <span class="material-icons">check_circle</span>
-                Zakończ i sprawdź wyniki
-            </button>
-        </div>
-    </form>
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                    <span class="material-icons">check_circle</span>
+                    Zakończ i sprawdź wyniki
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
