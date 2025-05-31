@@ -126,41 +126,74 @@ namespace MvcPracownicy.Controllers
 
         // POST: Question/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Content,QuizId")] Question question)
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("Id,Content,QuizId")] Question question, 
+    List<int> AnswerIds, List<string> AnswerContents, int CorrectAnswerIndex)
+{
+    if (HttpContext.Session.GetString("_UserRole") != "admin")
+    {
+        return RedirectToAction("Index", "Quiz");
+    }
+
+    if (id != question.Id)
+    {
+        return NotFound();
+    }
+
+    if (AnswerIds == null || AnswerContents == null || AnswerIds.Count != AnswerContents.Count)
+    {
+        ModelState.AddModelError("", "Invalid answers data.");
+        return View(question);
+    }
+
+    if (CorrectAnswerIndex < 0 || CorrectAnswerIndex >= AnswerIds.Count)
+    {
+        ModelState.AddModelError("", "Invalid correct answer selection.");
+        return View(question);
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            if (HttpContext.Session.GetString("_UserRole") != "admin")
+            // Update question
+            _context.Update(question);
+
+            // Update each answer
+            for (int i = 0; i < AnswerIds.Count; i++)
             {
-                return RedirectToAction("Index", "Quiz");
+                var answerId = AnswerIds[i];
+                var answer = await _context.Answers.FindAsync(answerId);
+                if (answer == null)
+                {
+                    ModelState.AddModelError("", $"Answer with id {answerId} not found.");
+                    return View(question);
+                }
+
+                answer.Content = AnswerContents[i];
+                answer.IsCorrect = (i == CorrectAnswerIndex);
+
+                _context.Update(answer);
             }
 
-            if (id != question.Id)
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", "Quiz", new { id = question.QuizId });
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!QuestionExists(question.Id))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            else
             {
-                try
-                {
-                    _context.Update(question);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!QuestionExists(question.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction("Details", "Quiz", new { id = question.QuizId });
+                throw;
             }
-            return View(question);
         }
+    }
+    return View(question);
+}
 
         // GET: Question/Delete/5
         public async Task<IActionResult> Delete(int? id)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dRjEeHMIuSy71W450/QD4V6N8f3YI5W2gx6jMMFFhGU=",
+  "Hash": "PMeGuYweqtWySu+aredpfO7GvRK2Gtw9rh0mPNgzmz8=",
   "Source": "MvcPracownicy",
   "BasePath": "_content/MvcPracownicy",
   "Mode": "Default",
@@ -1130,12 +1130,12 @@
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-6phrfvzevc.gz",
+      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
       "SourceId": "MvcPracownicy",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/MvcPracownicy",
-      "RelativePath": "css/login#[.{fingerprint=6phrfvzevc}]?.css.gz",
+      "RelativePath": "css/login#[.{fingerprint=zjqw6owbqq}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1144,8 +1144,8 @@
       "RelatedAsset": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "2tkthy4mnf",
-      "Integrity": "lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM=",
+      "Fingerprint": "0m9s56w8ik",
+      "Integrity": "qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6phrfvzevc",
-      "Integrity": "pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A=",
+      "Fingerprint": "zjqw6owbqq",
+      "Integrity": "bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -2728,13 +2728,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/login.6phrfvzevc.css",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-6phrfvzevc.gz",
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000350017501"
+          "Quality": "0.000349040140"
         }
       ],
       "ResponseHeaders": [
@@ -2744,19 +2744,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2856"
+          "Value": "2864"
         },
         {
           "Name": "ETag",
-          "Value": "\"lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM=\""
+          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2772,26 +2772,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A=\""
+          "Value": "W/\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "6phrfvzevc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/login.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A="
+          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
         }
       ]
     },
     {
-      "Route": "css/login.6phrfvzevc.css",
+      "Route": "css/login.css",
       "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2793,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15492"
+          "Value": "15537"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2801,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A=\""
+          "Value": "\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2864"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.zjqw6owbqq.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000349040140"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2864"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zjqw6owbqq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.zjqw6owbqq.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15537"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +2960,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6phrfvzevc"
+          "Value": "zjqw6owbqq"
         },
         {
           "Name": "label",
@@ -2831,13 +2968,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A="
+          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
         }
       ]
     },
     {
-      "Route": "css/login.6phrfvzevc.css.gz",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-6phrfvzevc.gz",
+      "Route": "css/login.zjqw6owbqq.css.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +2983,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2856"
+          "Value": "2864"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +2991,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM=\""
+          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
+          "Value": "Sat, 31 May 2025 09:15:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +3013,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6phrfvzevc"
+          "Value": "zjqw6owbqq"
         },
         {
           "Name": "label",
@@ -2884,144 +3021,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM="
-        }
-      ]
-    },
-    {
-      "Route": "css/login.css",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-6phrfvzevc.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000350017501"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2856"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A="
-        }
-      ]
-    },
-    {
-      "Route": "css/login.css",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "15492"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pnLsJuf8SBniekSdt84kpqnG75iPyvjPIusFPR1At9A="
-        }
-      ]
-    },
-    {
-      "Route": "css/login.css.gz",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-6phrfvzevc.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2856"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 13:48:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-lke7pAUnuUpm5J/SZ/T2A2v+WZVr+KAUgCDeCQv6iKM="
+          "Value": "sha256-qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s="
         }
       ]
     },

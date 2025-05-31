@@ -2,64 +2,204 @@
 
 @{
     ViewData["Title"] = "Edit Question";
+    Layout = "_AuthenticatedLayout";
 }
 
-<h1>Edit Question</h1>
+<style>
+    body {
+        padding-top: 150px;
+    }
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <input type="hidden" asp-for="QuizId" />
+    .glass-panel {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(173, 171, 177, 0.58);
+        width: 100%;
+        max-width: 800px;
+        margin: 100px auto 2rem auto;
+        padding: 2rem;
+        transition: transform 0.3s ease;
+    }
 
-            <div class="form-group mb-3">
-                <label asp-for="Content" class="control-label">Question</label>
-                <textarea asp-for="Content" class="form-control" rows="3"></textarea>
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
+    .question-form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-controller="Quiz" asp-action="Details" asp-route-id="@Model.QuizId"
-                    class="btn btn-secondary">Back to Quiz</a>
-            </div>
-        </form>
-    </div>
-</div>
+    .input-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
-<h2 class="mt-4">Answers</h2>
+    .question-input {
+        width: 100%;
+        max-width: 700px;
+        height: 100px;
+        padding: 15px;
+        background: rgb(233, 230, 221);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: rgb(34, 34, 30);
+        font-size: 1.1rem;
+        resize: none;
+        font-weight: normal;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-<div class="mb-3">
-    <a asp-controller="Answer" asp-action="Create" asp-route-questionId="@Model.Id" class="btn btn-primary">Add
-        Answer</a>
-</div>
+    .answers-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 
-@foreach (var answer in Model.Answers)
-{
-    <div class="card mb-3">
-        <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h5 class="card-title">@answer.Content</h5>
-                    @if (answer.IsCorrect)
-                    {
-                        <span class="badge bg-success">Correct Answer</span>
-                    }
-                </div>
-                <div>
-                    <a asp-controller="Answer" asp-action="Edit" asp-route-id="@answer.Id"
-                        class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-controller="Answer" asp-action="Delete" asp-route-id="@answer.Id"
-                        class="btn btn-danger btn-sm">Delete</a>
-                </div>
-            </div>
+    .answer-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Zmniejszone padding i font-size w polach odpowiedzi */
+    .answer-input {
+        flex: 1;
+        padding: 10px 12px;
+        background: rgb(233, 230, 221);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: rgb(34, 34, 30);
+        font-size: 1rem;
+        font-weight: normal;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .question-input:focus,
+    .answer-input:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .question-input::placeholder,
+    .answer-input::placeholder {
+        color: rgba(34, 34, 30, 0.5);
+        font-weight: bold;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 20px;
+        background-color: rgb(103, 82, 136);
+        border: 2px solid rgba(214, 214, 214, 0.56);
+        border-radius: 25px;
+        color: #FFFDD0;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        user-select: none;
+    }
+
+    .action-button:hover {
+        background-color: rgb(97, 83, 119);
+        color: #FFFDD0;
+        text-decoration: none;
+    }
+
+    /* Material Icons styl */
+    .material-icons {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #FFFDD0;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    input[type="radio"]:checked {
+        background-color: transparent;
+        border-color: #4CAF50;
+    }
+
+    input[type="radio"]:checked::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-color: #4CAF50;
+        border-radius: 50%;
+    }
+
+    .text-danger {
+        color: #ff6b6b;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="glass-panel">
+    <form asp-action="Edit" method="post" class="question-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="QuizId" />
+
+        <h2 class="mt-4 mb-3 text-center text-light" style="color: #FFFDD0;">Question</h2>
+
+        <div class="input-container">
+            <textarea asp-for="Content" class="question-input" placeholder="Enter your question..."></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
         </div>
-    </div>
-}
+
+        <h2 class="mt-5 mb-3 text-center text-light" style="color: #FFFDD0;">Answers</h2>
+
+        <div class="answers-container">
+            @{ int i = 0; }
+            @foreach (var answer in Model.Answers)
+            {
+                <div class="answer-row">
+                    <input type="radio" name="CorrectAnswerIndex" value="@i" @(answer.IsCorrect ? "checked" : "") />
+                    <input type="hidden" name="AnswerIds" value="@answer.Id" />
+                    <input type="text" name="AnswerContents" class="answer-input" value="@answer.Content" />
+                </div>
+                i++;
+            }
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="action-button">
+                <span class="material-icons">save</span> Save Question and Answers
+            </button>
+            <a asp-controller="Quiz" asp-action="Details" asp-route-id="@Model.QuizId" class="action-button">
+                <span class="material-icons">arrow_back</span> Back to Quiz
+            </a>
+        </div>
+    </form>
+</div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
