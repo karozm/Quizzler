@@ -5,12 +5,12 @@
     Layout = "_AuthenticatedLayout";
 }
 
-<div class="score-page-container">
+<div class="score-page-container" style="margin-top: 450px;">
     <div class="quiz-header">
         <h1>Wyniki</h1>
     </div>
 
-    <div class="scrollable-results">
+    <div class="scrollable-results" style="margin-bottom: 40px;">
         <table>
             <thead>
                 <tr>
@@ -37,7 +37,144 @@
             </tbody>
         </table>
     </div>
+
+    <div>
+        <label for="quizSelect" style="color:#FFFDD0; font-weight:800;">Wybierz quiz:</label>
+        <select id="quizSelect" style="margin: 10px 0 20px 0; padding: 5px;">
+            <option value="all">Wszystkie</option>
+            @foreach (var quizTitle in Model.Select(s => s.Quiz.Title).Distinct())
+            {
+                <option value="@quizTitle">@quizTitle</option>
+            }
+        </select>
+    </div>
+
+    <canvas id="scoreChart" style="max-width: 100%; height: 400px;"></canvas>
 </div>
+
+<style>
+    .score-page-container {
+        padding: 2rem;
+        max-width: 1000px;
+        margin: 100px auto 0 auto;
+        box-sizing: border-box;
+        color: #FFFDD0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* pozostałe style jak wcześniej */
+</style>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const allScores = [
+            @foreach (var score in Model)
+            {
+                var percent = Math.Round((double)score.Points / score.MaxPoints * 100, 2);
+                <text>{
+                    user: "@score.User.LoginName",
+                    quiz: "@score.Quiz.Title",
+                    percent: @percent
+                },</text>
+            }
+        ];
+
+        const ctx = document.getElementById('scoreChart').getContext('2d');  // <-- TO TU!
+
+        function getFilteredData(quizFilter) {
+            let filtered = quizFilter === 'all' ? allScores : allScores.filter(s => s.quiz === quizFilter);
+
+            const userGroups = {};
+            filtered.forEach(s => {
+                if (!userGroups[s.user]) {
+                    userGroups[s.user] = [];
+                }
+                userGroups[s.user].push(s.percent);
+            });
+
+            const userLabels = Object.keys(userGroups);
+            const userAverages = userLabels.map(user => {
+                const scores = userGroups[user];
+                const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+                return Math.round(avg * 100) / 100;
+            });
+
+            const overallAvg = filtered.length > 0
+                ? Math.round(filtered.reduce((a, s) => a + s.percent, 0) / filtered.length * 100) / 100
+                : 0;
+
+            userLabels.push('Średnia ogólna');
+            userAverages.push(overallAvg);
+
+            return {
+                labels: userLabels,
+                datasets: [{
+                    label: 'Średni procentowy wynik (%)',
+                    data: userAverages,
+                    backgroundColor: 'rgb(255, 190, 239)',
+                    borderColor: 'rgb(255, 107, 176)',
+                    borderWidth: 1
+                }]
+            };
+        }
+
+        const config = {
+            type: 'bar',
+            data: getFilteredData('all'),
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: '#FFFDD0'
+                        },
+                        grid: {
+                            color: '#FFFDD0'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Wynik procentowy',
+                            color: '#FFFDD0'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            display: false
+                        },
+                        grid: {
+                            color: '#FFFDD0'
+                        },
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#FFFDD0'
+                        }
+                    }
+                },
+                font: {
+                    family: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+                }
+            }
+        };
+
+        const scoreChart = new Chart(ctx, config);
+
+        document.getElementById('quizSelect').addEventListener('change', function () {
+            const selectedQuiz = this.value;
+            const newData = getFilteredData(selectedQuiz);
+            scoreChart.data = newData;
+            scoreChart.update();
+        });
+    </script>
+}
+
 
 <style>
     .score-page-container {
@@ -52,7 +189,7 @@
     }
 
     .scrollable-results {
-        max-height: 500px;
+        max-height: 300px;
         overflow-y: auto;
         border: 1px solid rgba(61, 52, 66, 0.88);
         border-radius: 8px;
@@ -91,3 +228,4 @@
         background-color: rgba(255, 255, 255, 0.07);
     }
 </style>
+

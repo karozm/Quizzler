@@ -3,14 +3,14 @@
     Layout = "_AuthenticatedLayout";
 }
 
-<div class="welcome-banner">
+<div class="welcome-banner" style="margin-top: 450px;">
     <div class="banner-content">
         <h1 class="app-title">QUIZZLER</h1>
         <p class="banner-text">Twórz niezapomniane quizy i sprawdzaj wiedzę w wyjątkowy sposób</p>
     </div>
 </div>
 
-<div class="quiz-list-container">
+<div class="quiz-list-container" style="margin-top: -40px;">
     <div class="quiz-grid">
         @if (Context.Session.GetString("_UserRole") == "admin")
         {

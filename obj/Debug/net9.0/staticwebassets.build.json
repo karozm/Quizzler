@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PMeGuYweqtWySu+aredpfO7GvRK2Gtw9rh0mPNgzmz8=",
+  "Hash": "abxj2eJ8JSJCjV/9IqB/pez0nxpdNwSWFdSY68k/A/w=",
   "Source": "MvcPracownicy",
   "BasePath": "_content/MvcPracownicy",
   "Mode": "Default",
@@ -1130,12 +1130,12 @@
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "Identity": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-wuwt89el3k.gz",
       "SourceId": "MvcPracownicy",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/MvcPracownicy",
-      "RelativePath": "css/login#[.{fingerprint=zjqw6owbqq}]?.css.gz",
+      "RelativePath": "css/login#[.{fingerprint=wuwt89el3k}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1144,8 +1144,8 @@
       "RelatedAsset": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "0m9s56w8ik",
-      "Integrity": "qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=",
+      "Fingerprint": "xheyf4frf6",
+      "Integrity": "G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zjqw6owbqq",
-      "Integrity": "bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=",
+      "Fingerprint": "wuwt89el3k",
+      "Integrity": "mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -2729,12 +2729,12 @@
   "Endpoints": [
     {
       "Route": "css/login.css",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-wuwt89el3k.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000349040140"
+          "Quality": "0.000345781466"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2744,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2864"
+          "Value": "2891"
         },
         {
           "Name": "ETag",
-          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+          "Value": "\"G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2772,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+          "Value": "W/\"mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+          "Value": "sha256-mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU="
         }
       ]
     },
@@ -2793,7 +2793,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15537"
+          "Value": "15645"
         },
         {
           "Name": "Content-Type",
@@ -2801,11 +2801,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+          "Value": "\"mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2815,13 +2815,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+          "Value": "sha256-mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU="
         }
       ]
     },
     {
       "Route": "css/login.css.gz",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-wuwt89el3k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2830,7 +2830,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2864"
+          "Value": "2891"
         },
         {
           "Name": "Content-Type",
@@ -2838,11 +2838,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+          "Value": "\"G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2860,18 +2860,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s="
+          "Value": "sha256-G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0="
         }
       ]
     },
     {
-      "Route": "css/login.zjqw6owbqq.css",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "Route": "css/login.wuwt89el3k.css",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-wuwt89el3k.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000349040140"
+          "Quality": "0.000345781466"
         }
       ],
       "ResponseHeaders": [
@@ -2881,15 +2881,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2864"
+          "Value": "2891"
         },
         {
           "Name": "ETag",
-          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+          "Value": "\"G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2909,13 +2909,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+          "Value": "W/\"mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zjqw6owbqq"
+          "Value": "wuwt89el3k"
         },
         {
           "Name": "label",
@@ -2923,12 +2923,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+          "Value": "sha256-mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU="
         }
       ]
     },
     {
-      "Route": "css/login.zjqw6owbqq.css",
+      "Route": "css/login.wuwt89el3k.css",
       "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2938,7 +2938,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15537"
+          "Value": "15645"
         },
         {
           "Name": "Content-Type",
@@ -2946,11 +2946,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE=\""
+          "Value": "\"mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2960,7 +2960,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zjqw6owbqq"
+          "Value": "wuwt89el3k"
         },
         {
           "Name": "label",
@@ -2968,13 +2968,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bzSxkbwVKywi55miYBWt/Kg5JjQl+Hi41MSI452v3AE="
+          "Value": "sha256-mDcD+iBpGQsmlhNX5b9IFJrHh1zIFXbI+WMqMr90orU="
         }
       ]
     },
     {
-      "Route": "css/login.zjqw6owbqq.css.gz",
-      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-zjqw6owbqq.gz",
+      "Route": "css/login.wuwt89el3k.css.gz",
+      "AssetFile": "C:\\Users\\koteke\\Desktop\\Quizzler\\Quizzler\\obj\\Debug\\net9.0\\compressed\\tpwx4efs3m-wuwt89el3k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2983,7 +2983,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2864"
+          "Value": "2891"
         },
         {
           "Name": "Content-Type",
@@ -2991,11 +2991,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s=\""
+          "Value": "\"G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 09:15:31 GMT"
+          "Value": "Sun, 01 Jun 2025 10:30:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3013,7 +3013,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zjqw6owbqq"
+          "Value": "wuwt89el3k"
         },
         {
           "Name": "label",
@@ -3021,7 +3021,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qBxKhQY2gjIIWQeZH7KSFlwp5OhiEMJxqxKmcyiDB7s="
+          "Value": "sha256-G9PCD/TynhGlg2za7t/FEUXzdV2bs9zaDUlSiy7bhl0="
         }
       ]
     },

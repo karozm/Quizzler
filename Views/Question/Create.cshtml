@@ -5,44 +5,22 @@
     Layout = "_AuthenticatedLayout";
 }
 
-<div class="quiz-container">
-    <form asp-action="Create" id="questionForm" class="question-form">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <input type="hidden" name="QuizId" value="@ViewBag.QuizId" />
-
-        <div class="input-container">
-            <textarea asp-for="Content" class="question-input" placeholder="Wpisz treść pytania" required></textarea>
-            <span asp-validation-for="Content" class="text-danger"></span>
-        </div>
-
-        <div class="answers-container">
-            @for (int i = 0; i < 4; i++)
-            {
-                <div class="answer-row">
-                    <input type="radio" name="CorrectAnswerIndex" value="@i" id="correct_@i" @(i == 0 ? "checked" : "") required />
-                    <input type="text" name="Answers" class="answer-input" placeholder="Odpowiedź @(i + 1)" required />
-                </div>
-            }
-        </div>
-
-        <div class="button-container">
-            <button type="submit" class="action-button">
-                <span class="material-icons">add_circle</span>
-                Dodaj pytanie
-            </button>
-            <a asp-controller="Quiz" asp-action="Details" asp-route-id="@ViewBag.QuizId" class="action-button">
-                <span class="material-icons">arrow_back</span>
-                Powrót do quizu
-            </a>
-        </div>
-    </form>
-</div>
-
 <style>
-    .quiz-container {
+    body {
+        padding-top: 150px;
+    }
+
+    .glass-panel {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(173, 171, 177, 0.58);
+        width: 100%;
         max-width: 800px;
-        margin: 100px auto;
-        padding: 20px;
+        margin: 10px auto 2rem auto;
+        padding: 2rem;
+        transition: transform 0.3s ease;
     }
 
     .question-form {
@@ -53,18 +31,24 @@
 
     .input-container {
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
+
 
     .question-input {
         width: 100%;
         height: 100px;
         padding: 15px;
-        background:rgb(233, 230, 221);
+        background: rgb(233, 230, 221);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 8px;
         color: rgb(34, 34, 30);
         font-size: 1.1rem;
-        resize: vertical;
+        resize: none;
+        font-weight: normal;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .answers-container {
@@ -79,14 +63,18 @@
         gap: 15px;
     }
 
+    
     .answer-input {
         flex: 1;
-        padding: 15px;
+        padding: 10px 12px;
         background: rgb(233, 230, 221);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 8px;
-        color:rgb(34, 34, 30);
-        font-size: 1.1rem;
+        color: rgb(34, 34, 30);
+        font-size: 1rem;
+        font-weight: normal;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .question-input:focus,
@@ -98,7 +86,7 @@
     .question-input::placeholder,
     .answer-input::placeholder {
         color: rgba(34, 34, 30, 0.5);
-        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .button-container {
@@ -111,29 +99,31 @@
     .action-button {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         padding: 10px 20px;
-        background-color: transparent;
-        border: 2px solid #FFFDD0;
+        background-color: rgb(103, 82, 136);
+        border: 2px solid rgba(214, 214, 214, 0.56);
         border-radius: 25px;
         color: #FFFDD0;
         font-size: 1rem;
         cursor: pointer;
         text-decoration: none;
         transition: all 0.3s ease;
+        user-select: none;
     }
 
     .action-button:hover {
-        background-color: #FFFDD0;
-        color: #1a1a1a;
+        background-color: rgb(97, 83, 119);
+        color: #FFFDD0;
         text-decoration: none;
     }
 
-    .action-button .material-icons {
+    /* Material Icons styl */
+    .material-icons {
         font-size: 20px;
+        line-height: 1;
     }
 
-    /* Style for radio buttons */
     input[type="radio"] {
         appearance: none;
         -webkit-appearance: none;
@@ -169,7 +159,43 @@
         font-size: 0.9rem;
         margin-top: 5px;
     }
+
 </style>
+
+<div class="glass-panel" style="margin-top: -5px;">
+    <h2 class="mt-0 mb-3 text-center" style="color: #FFFDD0;">Nowe pytanie</h2>
+
+    <form asp-action="Create" id="questionForm" class="question-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" name="QuizId" value="@ViewBag.QuizId" />
+
+        <div class="input-container">
+            <textarea asp-for="Content" class="question-input" placeholder="Wpisz treść pytania" required></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <div class="answers-container">
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="answer-row">
+                    <input type="radio" name="CorrectAnswerIndex" value="@i" id="correct_@i" @(i == 0 ? "checked" : "") required />
+                    <input type="text" name="Answers" class="answer-input" placeholder="Odpowiedź @(i + 1)" required />
+                </div>
+            }
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="action-button">
+                <span class="material-icons">add_circle</span>
+                Dodaj pytanie
+            </button>
+            <a asp-controller="Quiz" asp-action="Details" asp-route-id="@ViewBag.QuizId" class="action-button">
+                <span class="material-icons">arrow_back</span>
+                Powrót do quizu
+            </a>
+        </div>
+    </form>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
